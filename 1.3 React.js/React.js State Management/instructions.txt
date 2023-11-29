@@ -1,0 +1,23 @@
+Instructions to run/test:
+
+-> Ensure you have Node.js and npm installed on your machine.
+
+-> Create a new React application if you haven't already. You can use Create React App for this purpose. Run the following commands in your terminal:
+
+-> npx create-react-app my-blog-app
+-> Replace "my-blog-app" with the desired name for your React application.
+
+Change your working directory to the newly created app:
+
+-> cd my-blog-app
+Replace the content of the src/App.js file with the code provided above.
+
+Save the changes.
+
+Start your React application:
+
+-> npm start
+
+-> Open your web browser and visit http://localhost:3000 to see the blog post list.
+
+Click on the "View Full Post" button for any blog post to see the alert with the post title.

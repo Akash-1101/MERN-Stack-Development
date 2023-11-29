@@ -1,0 +1,44 @@
+SQL Databases:
+
+1.SQL databases are based on a structured and predefined schema, often to a rigid table-based structure.
+2.SQL databases are relational and use tables to organize and store data. Relationships between tables are established using keys.
+3.SQL databases adhere to ACID properties (Atomicity, Consistency, Isolation, Durability), ensuring transactional consistency.
+
+Examples:
+
+MySQL: An open-source relational database management system (RDBMS) widely used for web applications.
+PostgreSQL: Another powerful open-source RDBMS known for its extensibility and support for advanced data types.
+Oracle Database: A commercial RDBMS with a long history, used for enterprise-level applications.
+
+Use Cases:
+
+Applications with complex queries and transactions.
+Systems where data integrity is critical, such as financial applications.
+
+NoSQL Databases:
+
+NoSQL databases are schema-less, allowing for more flexibility in the types and structures of data that can be stored.
+NoSQL databases do not follow a strict relational model, and data can be stored in various formats, including key-value pairs, documents, column-family, or graphs.
+NoSQL databases follow the BASE model (Basically Available, Soft state, Eventually consistent), emphasizing availability and performance over strict consistency.
+
+Examples:
+
+MongoDB: A document-oriented NoSQL database that stores data in JSON-like BSON documents.
+Cassandra: A distributed NoSQL database designed for handling large amounts of data across multiple commodity servers.
+Redis: A key-value store often used for caching and real-time analytics.
+
+Use Cases:
+
+Big data and real-time applications requiring horizontal scalability.
+Situations where the data structure is evolving and may change frequently.
+
+Summary:
+SQL databases are well-suited for applications with complex relationships, structured data, and a need for ACID properties.
+NoSQL databases provide more flexibility in handling unstructured or semi-structured data and are suitable for distributed and horizontally scalable systems.
+
+
+
+
+
+
+

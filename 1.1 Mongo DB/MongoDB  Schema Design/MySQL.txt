@@ -1,0 +1,32 @@
+** User Table **
+
+CREATE TABLE User (
+  user_id INT PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  -- Add other user-related fields as needed
+);
+
+-- Post Table
+CREATE TABLE Post (
+  post_id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
+  content TEXT NOT NULL,
+  user_id INT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES User(user_id),
+  -- Add other post-related fields as needed
+);
+
+-- Comment Table
+CREATE TABLE Comment (
+  comment_id INT PRIMARY KEY AUTO_INCREMENT,
+  text TEXT NOT NULL,
+  user_id INT,
+  post_id INT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES User(user_id),
+  FOREIGN KEY (post_id) REFERENCES Post(post_id),
+  -- Add other comment-related fields as needed
+);

@@ -1,0 +1,35 @@
+CORS (Cross-Origin Resource Sharing):
+
+-> CORS is a security feature implemented by web browsers to control how web pages in one domain can request and consume resources (e.g., data, APIs) from another domain. 
+
+CORS Working:
+
+Simple Requests:
+
+-> For simple requests (GET, POST with specific content types), the browser automatically includes an Origin header in the request.
+-> The server responds with appropriate CORS headers, indicating whether the requested origin is allowed.
+
+Preflighted Requests:
+
+-> For more complex requests (custom headers, non-standard methods), the browser sends a preflight request with the HTTP method OPTIONS before the actual request.
+-> The server responds to the preflight request with CORS headers indicating whether the actual request is permitted.
+
+Handling of Responses:
+
+-> If the server response indicates that the request is allowed (CORS headers present and permit the origin), the browser allows the actual request.
+-> If the response does not allow the request, the browser blocks the actual request.
+
+Handling CORS-Related Issues:
+
+Server-Side Configuration:
+
+-> Ensure that the server includes appropriate CORS headers in its responses to indicate which origins are allowed. Common headers include Access-Control-Allow-Origin, Access-Control-Allow-Methods, and Access-Control-Allow-Headers.
+
+-> Use the wildcard (*) cautiously. While it allows any origin to access the resource, it might not be suitable for scenarios where strict control is needed.
+
+-> If your requests involve credentials (cookies, HTTP authentication), set the Access-Control-Allow-Credentials header on the server, and ensure that the client includes the withCredentials property in its requests.
+
+-> If your server is able to handle preflight requests more efficiently, consider setting appropriate caching headers (Access-Control-Max-Age) to reduce unnecessary preflight requests.
+
+Handling Errors:
+-> Implement error handling on both the server and client to handle cases where CORS-related issues occur.
