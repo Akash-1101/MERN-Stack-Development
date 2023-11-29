@@ -1,69 +1,69 @@
-import { Component } from "react";
-import Loader from "react-loader-spinner";
+import {Component} from 'react'
+import './index.css'
 
 const apiStatusConstants = {
-  initial: "INITIAL",
-  success: "SUCCESS",
-  inProgress: "IN_PROGRESS",
-};
+  initial: 'INITIAL',
+  success: 'SUCCESS',
+  inProgress: 'IN_PROGRESS',
+}
 
 class BlogPost extends Component {
   state = {
     posts: [],
     apiStatus: apiStatusConstants.initial,
-  };
+  }
 
   componentDidMount() {
-    this.getBlogLists();
+    this.getBlogLists()
   }
 
   getBlogLists = async () => {
     this.setState({
       apiStatus: apiStatusConstants.inProgress,
-    });
+    })
 
-    const apiUrl = "https://jsonplaceholder.typicode.com/todos";
-    const response = await fetch(apiUrl);
+    const apiUrl = 'https://jsonplaceholder.typicode.com/todos'
+    const response = await fetch(apiUrl)
     if (response.ok === true) {
-      const fetchedData = await response.json();
+      const fetchedData = await response.json()
       this.setState({
         posts: fetchedData,
         apiStatus: apiStatusConstants.success,
-      });
+      })
     }
-  };
+  }
 
   renderBlogList = () => {
-    const { posts } = this.state;
+    const {posts} = this.state
     return (
-      <div>
+      <div className="blog-list-container">
         <h1>Blog List</h1>
         <ul>
-          {posts.map((each) => (
+          {posts.map(each => (
             <li key={each.id}>{each.title}</li>
           ))}
         </ul>
       </div>
-    );
-  };
+    )
+  }
 
   renderLoadingView = () => (
-    <div>
-      <Loader type="ThreeDots" color="#0b69ff" height="50" width="50" />
+    <div className="loading-c">
+      <p>Loading...</p>
     </div>
-  );
+  )
 
   render() {
-    const { apiStatus } = this.state;
+    const {apiStatus} = this.state
     switch (apiStatus) {
       case apiStatusConstants.success:
-        return this.renderBlogList();
+        return this.renderBlogList()
       case apiStatusConstants.inProgress:
-        return this.renderLoadingView();
+        return this.renderLoadingView()
       default:
-        return null;
+        return null
     }
   }
 }
 
-export default BlogPost;
+export default BlogPost
